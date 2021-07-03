@@ -1,0 +1,57 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "name": "dance room",
+      "lastMessage": "There You go "
+    },
+    {
+      "id": 2,
+      "name": "dev room",
+      "lastMessage": "There You go "
+    },
+    {
+      "id": 3,
+      "name": "abc",
+      "lastMessage": "There You go "
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "roomId": 1,
+      "sender": "me",
+      "message": "this is great"
+    },
+    {
+      "id": 2,
+      "roomId": 1,
+      "sender": "ali ",
+      "message": " ohhh really ?"
+    },
+    {
+      "id": 3,
+      "roomId": 2,
+      "sender": "me",
+      "message": "anybody there ?"
+    },
+    {
+      "id": 4,
+      "roomId": 1,
+      "sender": "me",
+      "message": "yes it is"
+    },
+    {
+      "id": 5,
+      "roomId": 3,
+      "sender": "me",
+      "message": "any problem ?"
+    },
+    {
+      "id": 6,
+      "roomId": 2,
+      "sender": "ali",
+      "message": " Yes i'm here"
+    }
+  ]
+}
