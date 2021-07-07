@@ -1,20 +1,16 @@
-import React  from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Sidebar from "./components/sidebar/Sidebar";
 import Chat from "./components/chat/Chat";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const App: React.FC = () => {
+  const [roomId, setRoomId] = useState<number>(0);
 
   return (
     <div className="app">
       <div className="app__body">
-        <Router>
-          <Sidebar />
-          <Switch>
-            <Route exact path="/room/:roomId" component={Chat} />
-          </Switch>
-        </Router>
+        <Sidebar roomId={roomId} setRoomId={setRoomId}/>
+        {roomId !== 0 && <Chat roomId={roomId} />}
       </div>
     </div>
   );

@@ -15,7 +15,15 @@ interface Room {
   lastMessage?: string | undefined;
 }
 
-const Sidebar: React.FC = () => {
+type Roomm = {
+  roomId: number,
+  setRoomId : React.Dispatch<React.SetStateAction<number>>,
+
+}
+
+
+const Sidebar: React.FC <Roomm> = ( { roomId, setRoomId } : Roomm ) => {
+
   const data = useFetch("http://localhost:8000/rooms");
   const [rooms, setRooms] = useState<Room[]>(data);
 
@@ -81,10 +89,11 @@ const Sidebar: React.FC = () => {
                   id={room.id}
                   name={room.name}
                   lastMessage={room.lastMessage}
+                  setRoomId={setRoomId}
               />
           );
         }) : (
-            <div className="SidebarChat" onClick={createChat}> Craete new Chat</div>
+            <div className="SidebarChat" onClick={createChat}> Create new Chat</div>
         )}
       </div>
     </div>
