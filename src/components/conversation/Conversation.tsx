@@ -17,10 +17,6 @@ const Conversation : React.FC < Conversationn >  = ( { messages } : Conversation
 
     return (
         <div className="chat__body" id="chat_body">
-            {
-                messages === undefined ? <p className="default_message"> Send a new Message </p> : ''
-            }
-
             { messages !== undefined && messages.map((message) => {
                 return (
                     <p

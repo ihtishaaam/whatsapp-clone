@@ -13,11 +13,7 @@ interface Room {
 const ChatHeader: React.FC<Room> = ({ name }: Room) => {
   return (
     <div className="chat__header">
-      <Avatar
-        src={`https://avatars.dicebear.com/api/human/${Math.floor(
-          Math.random() * 5000
-        )}.svg`}
-      />
+      <Avatar />
       <div className="chat__headerInfo">
         <h3> {name !== undefined && name} </h3>
         <p> Last seen at ...</p>
