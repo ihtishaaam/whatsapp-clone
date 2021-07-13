@@ -23,7 +23,7 @@ const SidebarChat: React.FC<Rooms> = ({
   return (
     <div className="sidebar__chats">
       {rooms !== undefined && rooms.length !== 0 ? (
-        rooms.map(async (room: Room) => {
+        rooms.map((room: Room) => {
           return (
             <div className="SidebarChat" key={room.id}>
               <Avatar />
@@ -32,7 +32,7 @@ const SidebarChat: React.FC<Rooms> = ({
                 onClick={() => setRoomId(room.id)}
               >
                 <h2> {room.name} </h2>
-                <p> Last Message goes here </p>
+                <p> {"This looks great !!"}</p>
               </div>
             </div>
           );
