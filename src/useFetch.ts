@@ -1,35 +1,29 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 interface Room {
-    id: number,
-    name: string,
-    lastMessage?: string | undefined
+  id: number;
+  name: string;
+  lastMessage?: string | undefined;
 }
 
-const useFetch = ( url: string ) => {
-    const [data, setData ] = useState< any >();
+const useFetch = (url: string) => {
+  const [data, setData] = useState<any>();
 
-    useEffect( () => {
-        setTimeout(async () => {
-            fetch(url)
-                .then( res => {
-                    if ( !res.ok ){
-                        throw Error('Could not fetch data for this resource');
-                    }
-                    return res.json();
-                })
-                .then(data => {
-                    setData(data);
-                })
-                .catch( err => {
+  useEffect(() => {
+    fetch(url)
+      .then((res) => {
+        if (!res.ok) {
+          throw Error("Could not fetch data for this resource");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setData(data);
+      })
+      .catch((err) => {});
+  }, [url]);
 
-                })
-        }, 1000 );
-    }, [ url ]);
-
-    return data ;
-
+  return data;
 };
-
 
 export default useFetch;
